@@ -15,6 +15,7 @@
 - [Basic](#basic)
 - [Build](#build)
 - [Install](#install)
+- [Usage](#usage)
 
 <a id="basic" />
 
@@ -55,3 +56,35 @@ make install
 ```
 
 And Voila! your extension is installed !!!
+
+<a id="usage" />
+
+#### Usage
+
+In order to use your extension, create a database (in case you don't have it already) via `createdb <database-name>`:
+
+```bash
+createdb test
+```
+
+Now, connect to this database by:
+
+```bash
+psql test
+```
+
+To use your newly created extension, run:
+
+```sql
+create extension student;
+```
+
+This will dynamically load your extension.
+
+Now, you can create a table with your extension:
+
+```sql
+create table demo (id int, stud student);
+```
+
+And now, you can use 
