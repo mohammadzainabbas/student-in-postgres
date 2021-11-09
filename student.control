@@ -1,0 +1,5 @@
+# student extension
+comment = 'Student is a composite type with a name, age and grade'
+default_version = '1.0'
+module_pathname = '$libdir/student'
+relocatable = true
