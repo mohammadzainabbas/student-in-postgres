@@ -13,7 +13,8 @@ LANGUAGE C IMMUTABLE STRICT;
 
 CREATE TYPE student (
     INPUT = student_in,
-    OUTPUT = student_out
+    OUTPUT = student_out,
+    INTERNALLENGTH = 32
 );
 
 COMMENT ON TYPE student IS 'Student is a composite type with a name, age and grade';

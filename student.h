@@ -17,10 +17,11 @@ PG_MODULE_MAGIC;
 
 #include "utils/builtins.h"
 #include <stdio.h>
+#include <sting.h>
 
 typedef struct
 {
-    char* name;
+    char name[24];
     int age;
     float grade;
 } student;
