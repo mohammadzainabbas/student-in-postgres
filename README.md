@@ -37,7 +37,7 @@ After writing your source code, sql functions and control information, you need 
 make
 ```
 
-If you get an error about `pg_config`, it's because make wasn't able to find the `pg_config` binary in your path. You can add it via the below mentioned command:
+> Note: If you get an error about `pg_config`, it's because `make` wasn't able to find the `pg_config` binary in your path. You can add it via the below mentioned command:
 
 ```bash
 echo 'export PATH="/usr/local/pgsql/bin/:$PATH"' >> ~/.bashrc && source ~/.bashrc
@@ -81,10 +81,20 @@ create extension student;
 
 This will dynamically load your extension.
 
+And now, you can use it
+
+```sql
+select student '( "Mohammad" , 26 , 3.5 )';
+```
+
 Now, you can create a table with your extension:
 
 ```sql
 create table demo (id int, stud student);
 ```
 
-And now, you can use 
+and to insert into the table,
+
+```sql
+insert into demo values (1, '( "Mohammad" , 26 , 3.5 )');
+```
