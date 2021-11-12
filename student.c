@@ -17,7 +17,7 @@ static inline student* str_to_student(const char* str)
 
     student * s = (student *) palloc( sizeof(student) );
 
-    strcpy (s->name, name);
+    strcpy(s->name, name);
     s->age = age;
     s->grade = grade;
     
