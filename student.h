@@ -17,7 +17,7 @@ PG_MODULE_MAGIC;
 
 #include "utils/builtins.h"
 #include <stdio.h>
-#include <sting.h>
+#include <string.h>
 
 typedef struct
 {
