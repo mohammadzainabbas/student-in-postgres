@@ -1,0 +1,32 @@
+name: Build for macOS
+
+on:
+  workflow_dispatch:
+  push:
+    branch: main
+  pull_request:
+    branch: main
+
+jobs:
+  build:
+    name: Build
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Install PostgreSQL
+        run: |
+          brew install postgresql
+      - name: Configure
+        run: |
+          make
+      - name: Build
+        run: |
+          sudo make install
+      - name: Test Extension
+        run: |
+          pg_ctl -D /usr/local/var/postgres start
+          createdb ___test___
+          psql -d ___test___ -c "CREATE EXTENSION student; SELECT student '( "Mohammad" , 26 , 3.5 )';"
