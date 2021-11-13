@@ -30,7 +30,6 @@ static inline const char* student_to_str(const student* s)
     return result;
 }
 
-/*  */
 PG_FUNCTION_INFO_V1(student_in);
 Datum student_in(PG_FUNCTION_ARGS)
 {
