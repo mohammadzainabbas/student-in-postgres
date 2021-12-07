@@ -40,7 +40,7 @@ make
 > Note: If you get an error about `pg_config`, it's because `make` wasn't able to find the `pg_config` binary in your path. You can add it via the below mentioned command:
 
 ```bash
-echo 'export PATH="/usr/local/pgsql/bin/:$PATH"' >> ~/.bashrc && source ~/.bashrc
+echo 'export PATH="/usr/local/pgsql/bin:$PATH"' >> ~/.bashrc && source ~/.bashrc
 ```
 
 > Note: If you have installed postgres somewhere else, replace `/usr/local/pgsql/bin/` to the installation location of your postgres. 
